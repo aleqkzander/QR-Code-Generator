@@ -30,12 +30,13 @@ namespace QR_Code_Generator
         {
             if (string.IsNullOrEmpty(QRCodeData.Text))
             {
-                MessageBox.Show("Info", "Please insert data to generate a QR-Code.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please insert data to generate a QR-Code.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             var qrData = qrCodeGenerator.CreateQrCode(QRCodeData.Text, QRCodeGenerator.ECCLevel.H);
             var qrCode = new QRCode(qrData);
+
             QRCodePicture.Image = qrCode.GetGraphic(50);
         }
 
@@ -43,7 +44,7 @@ namespace QR_Code_Generator
         {
             if (QRCodePicture.Image == null)
             {
-                MessageBox.Show("Info", "Genrate a QR-Code first.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Genrate a QR-Code first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
