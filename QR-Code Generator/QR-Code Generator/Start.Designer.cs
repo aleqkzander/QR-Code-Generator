@@ -3,12 +3,12 @@
     partial class Start
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,94 +23,80 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Start));
-            QRCodePicture = new PictureBox();
-            ContentBox = new TextBox();
-            GenerateBtn = new Button();
-            ExportBtn = new Button();
-            richTextBox1 = new RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)QRCodePicture).BeginInit();
-            SuspendLayout();
+            this.QRCodePicture = new System.Windows.Forms.PictureBox();
+            this.QRCodeData = new System.Windows.Forms.TextBox();
+            this.GenerateCodeBtn = new System.Windows.Forms.Button();
+            this.ExportCodeBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.QRCodePicture)).BeginInit();
+            this.SuspendLayout();
             // 
             // QRCodePicture
             // 
-            QRCodePicture.BorderStyle = BorderStyle.Fixed3D;
-            QRCodePicture.Location = new Point(12, 12);
-            QRCodePicture.Name = "QRCodePicture";
-            QRCodePicture.Size = new Size(300, 300);
-            QRCodePicture.SizeMode = PictureBoxSizeMode.Zoom;
-            QRCodePicture.TabIndex = 0;
-            QRCodePicture.TabStop = false;
+            this.QRCodePicture.Location = new System.Drawing.Point(12, 12);
+            this.QRCodePicture.Name = "QRCodePicture";
+            this.QRCodePicture.Size = new System.Drawing.Size(300, 300);
+            this.QRCodePicture.TabIndex = 0;
+            this.QRCodePicture.TabStop = false;
             // 
-            // ContentBox
+            // QRCodeData
             // 
-            ContentBox.BorderStyle = BorderStyle.FixedSingle;
-            ContentBox.Location = new Point(318, 12);
-            ContentBox.Name = "ContentBox";
-            ContentBox.Size = new Size(300, 23);
-            ContentBox.TabIndex = 1;
+            this.QRCodeData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.QRCodeData.Location = new System.Drawing.Point(318, 12);
+            this.QRCodeData.Name = "QRCodeData";
+            this.QRCodeData.Size = new System.Drawing.Size(349, 20);
+            this.QRCodeData.TabIndex = 1;
             // 
-            // GenerateBtn
+            // GenerateCodeBtn
             // 
-            GenerateBtn.FlatStyle = FlatStyle.Flat;
-            GenerateBtn.Location = new Point(318, 41);
-            GenerateBtn.Name = "GenerateBtn";
-            GenerateBtn.Size = new Size(300, 23);
-            GenerateBtn.TabIndex = 2;
-            GenerateBtn.Text = "Generate QR-Code";
-            GenerateBtn.UseVisualStyleBackColor = true;
-            GenerateBtn.Click += GenerateBtn_Click;
+            this.GenerateCodeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GenerateCodeBtn.Location = new System.Drawing.Point(318, 38);
+            this.GenerateCodeBtn.Name = "GenerateCodeBtn";
+            this.GenerateCodeBtn.Size = new System.Drawing.Size(349, 23);
+            this.GenerateCodeBtn.TabIndex = 2;
+            this.GenerateCodeBtn.Text = "Generate QR-Code";
+            this.GenerateCodeBtn.UseVisualStyleBackColor = true;
+            this.GenerateCodeBtn.Click += new System.EventHandler(this.GenerateCodeBtn_Click);
             // 
-            // ExportBtn
+            // ExportCodeBtn
             // 
-            ExportBtn.FlatStyle = FlatStyle.Flat;
-            ExportBtn.Location = new Point(318, 70);
-            ExportBtn.Name = "ExportBtn";
-            ExportBtn.Size = new Size(300, 23);
-            ExportBtn.TabIndex = 3;
-            ExportBtn.Text = "Export QR-Code";
-            ExportBtn.UseVisualStyleBackColor = true;
-            ExportBtn.Click += ExportBtn_Click;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(318, 99);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(300, 213);
-            richTextBox1.TabIndex = 4;
-            richTextBox1.Text = "";
+            this.ExportCodeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExportCodeBtn.Location = new System.Drawing.Point(318, 67);
+            this.ExportCodeBtn.Name = "ExportCodeBtn";
+            this.ExportCodeBtn.Size = new System.Drawing.Size(349, 23);
+            this.ExportCodeBtn.TabIndex = 3;
+            this.ExportCodeBtn.Text = "Export QR-Code";
+            this.ExportCodeBtn.UseVisualStyleBackColor = true;
+            this.ExportCodeBtn.Click += new System.EventHandler(this.ExportCodeBtn_Click);
             // 
             // Start
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(630, 326);
-            Controls.Add(richTextBox1);
-            Controls.Add(ExportBtn);
-            Controls.Add(GenerateBtn);
-            Controls.Add(ContentBox);
-            Controls.Add(QRCodePicture);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
-            Name = "Start";
-            Text = "QR-Code Generator";
-            Load += Start_Load;
-            ((System.ComponentModel.ISupportInitialize)QRCodePicture).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(679, 323);
+            this.Controls.Add(this.ExportCodeBtn);
+            this.Controls.Add(this.GenerateCodeBtn);
+            this.Controls.Add(this.QRCodeData);
+            this.Controls.Add(this.QRCodePicture);
+            this.Name = "Start";
+            this.Text = "QR-Code Generator";
+            this.Load += new System.EventHandler(this.Start_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.QRCodePicture)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
-        private PictureBox QRCodePicture;
-        private TextBox ContentBox;
-        private Button GenerateBtn;
-        private Button ExportBtn;
-        private RichTextBox richTextBox1;
+        private System.Windows.Forms.PictureBox QRCodePicture;
+        private System.Windows.Forms.TextBox QRCodeData;
+        private System.Windows.Forms.Button GenerateCodeBtn;
+        private System.Windows.Forms.Button ExportCodeBtn;
     }
 }
+

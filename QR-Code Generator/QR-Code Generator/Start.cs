@@ -1,10 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Drawing.Imaging;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using QRCoder;
 
 namespace QR_Code_Generator
 {
     public partial class Start : Form
     {
-        private QRCoder.QRCodeGenerator qrCodeGenerator;
+        private QRCodeGenerator qrCodeGenerator;
 
         public Start()
         {
@@ -13,23 +23,23 @@ namespace QR_Code_Generator
 
         private void Start_Load(object sender, EventArgs e)
         {
-            qrCodeGenerator = new();
+            qrCodeGenerator = new QRCodeGenerator();
         }
 
-        private void GenerateBtn_Click(object sender, EventArgs e)
+        private void GenerateCodeBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(ContentBox.Text))
+            if (string.IsNullOrEmpty(QRCodeData.Text))
             {
                 MessageBox.Show("Info", "Please insert data to generate a QR-Code.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            var qrData = qrCodeGenerator.CreateQrCode(ContentBox.Text, QRCoder.QRCodeGenerator.ECCLevel.H);
-            var qrCode = new QRCoder.QRCode(qrData);
+            var qrData = qrCodeGenerator.CreateQrCode(QRCodeData.Text, QRCodeGenerator.ECCLevel.H);
+            var qrCode = new QRCode(qrData);
             QRCodePicture.Image = qrCode.GetGraphic(50);
         }
 
-        private void ExportBtn_Click(object sender, EventArgs e)
+        private void ExportCodeBtn_Click(object sender, EventArgs e)
         {
             if (QRCodePicture.Image == null)
             {
@@ -37,8 +47,11 @@ namespace QR_Code_Generator
                 return;
             }
 
-            SaveFileDialog saveFileDialog = new();
-            saveFileDialog.Filter = "PNG files (*.png)|*.png";
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "PNG files (*.png)|*.png"
+            };
+
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 QRCodePicture.Image.Save(saveFileDialog.FileName + "." + ImageFormat.Png);
